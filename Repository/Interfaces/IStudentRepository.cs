@@ -10,5 +10,7 @@ namespace Repository.Interfaces
     public interface IStudentRepository
     {
         Task<IEnumerable<Student>> GetAllStudents(bool trackChanges);
+        Task<Student?> GetStudentById(Guid id, bool trackChanges);  
+        void CreateStudent(Student student);    
     }
 }

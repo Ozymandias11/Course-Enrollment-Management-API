@@ -15,10 +15,14 @@ namespace Repository.Implementations
         {
         }
 
+        public void CreateStudent(Student student) => Create(student);
+       
+
         public async Task<IEnumerable<Student>> GetAllStudents(bool trackChanges)
             => await FindAll(trackChanges).ToListAsync();
-        
-            
-        
+
+        public async Task<Student?> GetStudentById(Guid id, bool trackChanges)
+            => await FindByCondition(s => s.Id == id, trackChanges).FirstOrDefaultAsync();
+       
     }
 }
