@@ -11,6 +11,7 @@ namespace Repository.Interfaces
     {
         Task<IEnumerable<Student>> GetAllStudents(bool trackChanges);
         Task<Student?> GetStudentById(Guid id, bool trackChanges);  
-        void CreateStudent(Student student);    
+        void CreateStudent(Student student);
+        void DeleteStudent(Student student);
     }
 }

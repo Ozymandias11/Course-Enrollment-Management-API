@@ -10,6 +10,7 @@ namespace Course_Enrollment_Management_APi.MappingProfile
         {
             CreateMap<Student, StudentDto>();
             CreateMap<StudentForCreationDto, Student>();
+            CreateMap<StudentForUpdateDto, Student>();
         }
     }
 }

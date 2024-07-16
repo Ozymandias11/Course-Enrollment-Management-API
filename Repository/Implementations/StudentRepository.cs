@@ -15,8 +15,11 @@ namespace Repository.Implementations
         {
         }
 
+
         public void CreateStudent(Student student) => Create(student);
-       
+
+        public void DeleteStudent(Student student) => Delete(student);
+     
 
         public async Task<IEnumerable<Student>> GetAllStudents(bool trackChanges)
             => await FindAll(trackChanges).ToListAsync();
