@@ -9,6 +9,7 @@ namespace Repository.Interfaces
     public interface IRepositoryManager
     {
         IStudentRepository StudentRepository { get; }
+        ICourseRepository CourseRepository { get; }
         Task SaveChanges();
     }
 }
