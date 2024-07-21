@@ -25,7 +25,11 @@ namespace Repository.Implementations
             => await FindAll(trackChanges).ToListAsync();
 
         public async Task<Student?> GetStudentById(Guid id, bool trackChanges)
-            => await FindByCondition(s => s.Id == id, trackChanges).FirstOrDefaultAsync();
-       
+        {
+            return await FindByCondition(s => s.Id == id, trackChanges)
+                    .Include(s => s.Enrollments)
+                       .ThenInclude(e => e.Course)
+                    .FirstOrDefaultAsync();
+        }
     }
 }
