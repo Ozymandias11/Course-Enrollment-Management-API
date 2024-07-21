@@ -10,6 +10,7 @@ namespace Repository.Interfaces
     {
         IStudentRepository StudentRepository { get; }
         ICourseRepository CourseRepository { get; }
+        IEnrollmentRepository EnrollmentRepository { get; }
         Task SaveChanges();
     }
 }
